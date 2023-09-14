@@ -1,0 +1,24 @@
+h1{
+    color: #fcc8fb;
+    text-align: center;
+    font-family: 'Lucida Handwriting', cursive;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #ced4da;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    text-decoration: overline underline;
+}
+body {
+    text-align: left;
+    background-color: #75057b;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+#sobremi h2, #aprendizaje h2,#idiomas h2, #deseo h2 {
+    margin-bottom: 20px;
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-variant: normal;
+    font-size: 1.25em;
+}
