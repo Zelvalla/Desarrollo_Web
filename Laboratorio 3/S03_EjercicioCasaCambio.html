@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Casa de Cambio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #formulario {
+            padding: 20px;
+            border: 10px solid #ccc;
+            background-color: #f4f4f4;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.722);
+        }
+
+        #formulario label,
+        #formulario select,
+        #formulario input,
+        #formulario button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #formulario button {
+            background-color: #0e6f1b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #formulario button:hover {
+            background-color: #28a20d;
+        }
+    </style>
+    <script>
+        function calcularTotal() {
+            const monedaOrigen = document.getElementById("monedaOrigen").value;
+            const monedaDestino = document.getElementById("monedaDestino").value;
+            const cantidad = parseFloat(document.getElementById("cantidad").value);
+
+            // Define las tasas de cambio (estas tasas son ficticias, debes actualizarlas)
+            const tasasDeCambio = {
+                dolar: {
+                    soles: 4.00,
+                    euros: 0.85
+                },
+                soles: {
+                    dolar: 0.25,
+                    euros: 0.21
+                },
+                euros: {
+                    dolar: 1.18,
+                    soles: 4.73
+                }
+            };
+
+            // Calcula el total a recibir
+            const total = cantidad * tasasDeCambio[monedaOrigen][monedaDestino];
+
+            // Muestra una alerta con el total
+            alert(`Total a recibir: ${total.toFixed(2)} ${monedaDestino}`);
+        }
+    </script>
+</head>
+<body>
+    <div id="formulario">
+        <h1>Casa de Cambio</h1>
+        <form id="casaDeCambioForm">
+            <label for="monedaOrigen">Moneda de Origen:</label>
+            <select id="monedaOrigen" name="monedaOrigen">
+                <option value="dolar">Dólar</option>
+                <option value="soles">Soles</option>
+                <option value="euros">Euros</option>
+            </select>
+            
+            <label for="monedaDestino">Moneda de Destino:</label>
+            <select id="monedaDestino" name="monedaDestino">
+                <option value="dolar">Dólar</option>
+                <option value="soles">Soles</option>
+                <option value="euros">Euros</option>
+            </select>
+            
+            <label for="cantidad">Cantidad a Cambiar:</label>
+            <input type="number" id="cantidad" name="cantidad" step="0.01" required>
+            
+            <button type="button" onclick="calcularTotal()">Calcular Total</button>
+        </form>
+    </div>
+    
+    
+</body>
+</html>
